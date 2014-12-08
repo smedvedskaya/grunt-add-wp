@@ -4,20 +4,21 @@ module.exports = function(grunt) {
 
   // Paths
   var PathConfig = {
-    sassDir:        'scss/',
-    cssDir:         'css/',
-    jsDir:          'js/',
-    imgDir:         'images/',
-    imgSourceDir:   'sourceimages/',
-    tempDir:        'temp/',
-    distDir:        'production/',
+    sassDir:          'scss/',
+    sassMainFileName: 'style',
+    cssDir:           'css/',
+    cssMainFileDir    './',
+    cssMainFileName   'style',
+    jsDir:            'js/',
+    imgDir:           'images/',
+    imgSourceDir:     'sourceimages/',
 
     // sftp server
-    sftpServer:      'example.com',
-    sftpPort:        '2121',
-    sftpLogin:       'login',
-    sftpPas:         'password',
-    sftpDestination: '/pathTo/css'
+    sftpServer:       'example.com',
+    sftpPort:         '2121',
+    sftpLogin:        'login',
+    sftpPas:          'password',
+    sftpDestination:  '/pathTo/css'
   };
 
   // tasks
@@ -29,11 +30,8 @@ module.exports = function(grunt) {
     //clean files
     clean: {
       options: { force: true },
-      all: {
-        src: ["<%= config.cssDir %>", "<%= config.imgDir %>"]
-      },
       css: {
-        src: ["<%= config.cssDir %>**/*.map", "style.css.map"]
+        src: ["<%= config.cssDir %>**/*.map", "<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css.map"]
       }
     },
 
@@ -49,12 +47,12 @@ module.exports = function(grunt) {
         },
         expand: true,
         flatten: true,
-        src: ['<%= config.cssDir %>*.css', './style.css'],
+        src: ['<%= config.cssDir %>*.css', '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'],
       },
 
       dist: {
         src: ['<%= config.cssDir %>*.css', 
-              './style.css',
+              '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css',
               '!<%= config.cssDir %>bootstrap.css',
               '!<%= config.cssDir %>bootstrap.min.css',
               '!<%= config.cssDir %>ie.css',
@@ -74,11 +72,11 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= config.sassDir %>',
-            src: ['**/*.scss', '!style.scss'],
+            src: ['**/*.scss', '!<%= config.sassMainFileName %>.scss'],
             dest: '<%= config.cssDir %>',
             ext: '.css'
           },
-          {src: '<%= config.sassDir %>style.scss', dest: './style.css'},
+          {src: '<%= config.sassDir %><%= config.sassMainFileName %>.scss', dest: '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'}, sassMainFileName
         ]
       },
       dist: {
@@ -90,11 +88,11 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= config.sassDir %>',
-            src: ['**/*.scss', '!style.scss'],
+            src: ['**/*.scss', '!<%= config.sassMainFileName %>.scss'],
             dest: '<%= config.cssDir %>',
             ext: '.css'
           },
-          {src: '<%= config.sassDir %>style.scss', dest: './style.css'},
+          {src: '<%= config.sassDir %><%= config.sassMainFileName %>.scss', dest: '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'},
         ]
       },
       min: {
@@ -106,11 +104,11 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= config.sassDir %>',
-            src: ['**/*.scss', '!style.scss'],
+            src: ['**/*.scss', '!<%= config.sassMainFileName %>.scss'],
             dest: '<%= config.cssDir %>',
             ext: '.min.css'
           },
-          {src: '<%= config.sassDir %>style.scss', dest: './style.min.css'},
+          {src: '<%= config.sassDir %><%= config.sassMainFileName %>.scss', dest: '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.min.css'},
         ]
       }
     },
@@ -226,7 +224,7 @@ module.exports = function(grunt) {
       all: {
         expand: true,
         src: ['<%= config.cssDir %>*.css', 
-              './style.css',
+              '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css',
               '!<%= config.cssDir %>bootstrap.css',
               '!<%= config.cssDir %>ie.css',
               '!<%= config.cssDir %>ie8.css'
@@ -236,7 +234,7 @@ module.exports = function(grunt) {
       dist: {
         expand: true,
         files: {
-          './style.css' : './style.css'
+          '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css' : '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'
         },
       }
     },
@@ -252,7 +250,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          './style.css' : './style.css'
+          '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css' : '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'
         },
       }
     },
