@@ -7,8 +7,8 @@ module.exports = function(grunt) {
     sassDir:          'scss/',
     sassMainFileName: 'style',
     cssDir:           'css/',
-    cssMainFileDir    './',
-    cssMainFileName   'style',
+    cssMainFileDir:   './',
+    cssMainFileName:  'style',
     jsDir:            'js/',
     imgDir:           'images/',
     imgSourceDir:     'sourceimages/',
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
             dest: '<%= config.cssDir %>',
             ext: '.css'
           },
-          {src: '<%= config.sassDir %><%= config.sassMainFileName %>.scss', dest: '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'}, sassMainFileName
+          {src: '<%= config.sassDir %><%= config.sassMainFileName %>.scss', dest: '<%= config.cssMainFileDir %><%= config.cssMainFileName %>.css'}
         ]
       },
       dist: {
@@ -176,7 +176,7 @@ module.exports = function(grunt) {
         },
         options: {
           server: {
-            baseDir: "./",
+            baseDir: "../",
             index: "index.html",
             directory: true
           },
