@@ -1,4 +1,7 @@
-.widget {margin-bottom: 14px; overflow: hidden;}
+.widget {
+	margin-bottom: 14px;
+	@extend %clearfix;
+}
 .widget ul{padding-left:2em;}
 .widget select{min-width: 150px;}
 .comment-form textarea,
