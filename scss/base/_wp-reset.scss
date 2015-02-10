@@ -1,29 +1,56 @@
+/// #main { @extend %clearfix; }
+/// #content { float: left; width: 70%; }
+/// #sidebar { float: right; width: 25%; }
+
 .widget {
-	margin-bottom: 14px;
+	margin-bottom: $base-text-interval;
 	@extend %clearfix;
 }
 .widget ul{padding-left:2em;}
 .widget select{min-width: 150px;}
 .comment-form textarea,
+.post-password-form input[type="password"],
 .comment-form input[type="text"],
 .search-form input[type="search"]{
 	margin:0 4px 0 0;
 	width:300px;
 }
-.post-password-form label{vertical-align: top;}
+.post-password-form label{display: block;}
 .post-password-form input[type="password"],
 .search-form input[type="search"]{width:150px;}
-.commentlist{margin:0 0 14px;}
+.post-password-form p,
+.search-form{
+	@extend %clearfix;
+}
+.post-password-form input,
+.search-form input{
+	float: left;
+	height: 24px;
+}
+.comment-form input[type="submit"],
+.post-password-form input[type="submit"],
+.search-form input[type="submit"]{
+	background:$base-text-color;
+	color: $white;
+	height: 24px;
+	border: none;
+	padding: 0 10px;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+.comment-form input[type="submit"] {float: none; display: block;}
+.commentlist{margin:0 0 $base-text-interval;}
 .commentlist .edit-link{margin:0;}
 .commentlist-item .commentlist-item {padding:0 0 0 3em;}
 @media only screen and (max-width: 767px){.commentlist-item .commentlist-item {padding: 0;}}
 .comment,
 .commentlist-holder{overflow:hidden;}
 .commentlist-item .commentlist-item,
-.commentlist-item + .commentlist-item{padding-top:14px;}
+.commentlist-item + .commentlist-item{padding-top:$base-text-interval;}
 .commentlist .avatar-holder{
 	float:left;
-	margin:0 14px 4px 0;
+	margin:0 $base-text-interval 4px 0;
 }
 .comment-form label{
 	display:block;
@@ -43,7 +70,7 @@
 }
 .navigation{
 	overflow:hidden;
-	margin:0 0 14px;
+	margin:0 0 $base-text-interval;
 }
 .navigation .next{
 	float:left;
@@ -59,16 +86,22 @@
 }
 .wp-caption img{vertical-align:top;} 
 .wp-caption p{margin:10px 0 0;}
-div.aligncenter {margin: 0 auto 14px;}
+div.aligncenter {margin: 0 auto $base-text-interval;}
 img.aligncenter {
 	display: block;
 	margin: 0 auto;
 }
 .alignleft {
 	float: left;
-	margin: 0 14px 4px 0; 
+	margin: 0 $base-text-interval 4px 0; 
 }
 .alignright {
 	float: right;
-	margin: 0 0 4px 14px; 
+	margin: 0 0 4px $base-text-interval; 
 }
+
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor{ height: auto; }
