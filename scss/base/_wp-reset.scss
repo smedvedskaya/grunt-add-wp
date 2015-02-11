@@ -31,8 +31,8 @@ $base-text-interval: 14px !default;
 .comment-form input[type="submit"],
 .post-password-form input[type="submit"],
 .search-form input[type="submit"]{
-	background:$base-text-color;
-	color: $white;
+	background:#000;
+	color: #fff;
 	height: 24px;
 	border: none;
 	padding: 0 10px;
