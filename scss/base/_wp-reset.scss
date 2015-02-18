@@ -80,12 +80,13 @@ $base-text-interval: 14px !default;
 	float:right;
 }
 .wp-caption{
-	max-width: 98%;
+	max-width: 100%;
 	clear:both;
 	border:1px solid #ccc;
 	padding:5px;
+	margin-bottom: $base-text-interval;
 }
-.wp-caption img{vertical-align:top;} 
+.wp-caption img{vertical-align:top; margin:0;} 
 .wp-caption p{margin:10px 0 0;}
 div.aligncenter {margin: 0 auto $base-text-interval;}
 img.aligncenter {
@@ -100,7 +101,9 @@ img.aligncenter {
 	float: right;
 	margin: 0 0 4px $base-text-interval; 
 }
-
+.mejs-container{
+	margin-bottom: $base-text-interval;
+}
 .gallery,
 .alignnone,
 .gallery-caption,
