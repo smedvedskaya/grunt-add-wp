@@ -26,9 +26,10 @@ $mq-breakpoints: (
 // Show active breakpoint in top right corner of viewport 
 $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, widescreen, tvscreen);
 
+@import "mq";
 @import "base/markup-variables";
 @import "base/markup-mixins";
 @import "base/cms-reset";
 @import "base/wp-reset";
-@import "mq";
+
 
