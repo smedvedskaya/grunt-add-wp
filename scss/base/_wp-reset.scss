@@ -27,11 +27,11 @@ $base-text-interval: 14px !default;
 		min-height: 120px;
 	}
 	textarea,
-	input[type="text"] {
+	input[type='text'] {
 		margin: 0 4px 0 0;
 		width: 300px;
 	}
-	input[type="submit"] {
+	input[type='submit'] {
 		display: block;
 		float: none;
 	}
@@ -41,7 +41,7 @@ $base-text-interval: 14px !default;
 	label {
 		display: block;
 	}
-	input[type="password"] {
+	input[type='password'] {
 		margin: 0 4px 0 0;
 		width: 300px;
 	}
@@ -52,7 +52,7 @@ $base-text-interval: 14px !default;
 	input {
 		float: left;
 		height: 24px;
-		&[type="search"] {
+		&[type='search'] {
 			margin: 0 4px 0 0;
 			width: 150px;
 		}
@@ -66,7 +66,7 @@ $base-text-interval: 14px !default;
 	input {
 		float: left;
 		height: 24px;
-		&[type="password"] {
+		&[type='password'] {
 			width: 150px;
 		}
 	}
@@ -75,7 +75,7 @@ $base-text-interval: 14px !default;
 .comment-form,
 .post-password-form,
 .search-form {
-	input[type=submit] {
+	input[type='submit'] {
 		background: $base-form-button-bg;
 		color: $base-form-button-color;
 		height: 24px;
@@ -100,9 +100,10 @@ $base-text-interval: 14px !default;
 
 .commentlist-item {
 	.commentlist-item {
-		padding: 0 0 0 3em;
-		@include mq($until: tablet) {
-			padding: 0;
+		padding: 0;
+		@include mq($from: tablet) {
+			padding: 0 0 0 2em;
+			
 		}
 	}
 }
