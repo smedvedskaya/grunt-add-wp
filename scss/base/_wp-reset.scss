@@ -101,7 +101,7 @@ $base-text-interval: 14px !default;
 .commentlist-item {
 	.commentlist-item {
 		padding: 0;
-		@include media("<tablet") {
+		@include media(">=tablet") {
 			padding: 0 0 0 2em;
 			
 		}
