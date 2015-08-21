@@ -2,9 +2,9 @@
 /// #content { float: left; width: 70%; }
 /// #sidebar { float: right; width: 25%; }
 
-$base-text-interval: 14px !default;
+
 .widget {
-	margin-bottom: $base-text-interval;
+	margin-bottom: $vertical-rhythm;
 	@extend %clearfix;
 	ul {
 		padding-left: 2em;
@@ -20,7 +20,6 @@ $base-text-interval: 14px !default;
 		padding-bottom: 4px;
 	}
 	textarea {
-		padding: 3px 4px;
 		overflow: auto;
 		margin: 0;
 		height: 120px;
@@ -51,7 +50,7 @@ $base-text-interval: 14px !default;
 	@extend %clearfix;
 	input {
 		float: left;
-		height: 24px;
+		height: 2em;
 		&[type='search'] {
 			margin: 0 4px 0 0;
 			width: 150px;
@@ -65,7 +64,7 @@ $base-text-interval: 14px !default;
 	}
 	input {
 		float: left;
-		height: 24px;
+		height: 2em;
 		&[type='password'] {
 			width: 150px;
 		}
@@ -76,11 +75,11 @@ $base-text-interval: 14px !default;
 .post-password-form,
 .search-form {
 	input[type='submit'] {
-		background: $base-form-button-bg;
-		color: $base-form-button-color;
-		height: 24px;
+		background: $btn-background;
+		color: $btn-color;
+		height: 2em;
 		border: none;
-		padding: 0 10px;
+		padding: 0 .5em;
 		&:hover {
 			opacity: 0.8;
 		}
@@ -88,13 +87,13 @@ $base-text-interval: 14px !default;
 }
 
 .commentlist {
-	margin: 0 0 $base-text-interval;
+	margin: 0 0 $vertical-rhythm;
 	.edit-link {
 		margin: 0;
 	}
 	.avatar-holder {
 		float: left;
-		margin: 0 $base-text-interval 4px 0;
+		margin: 0 $vertical-rhythm 4px 0;
 	}
 }
 
@@ -115,7 +114,7 @@ $base-text-interval: 14px !default;
 
 .commentlist-item .commentlist-item,
 .commentlist-item + .commentlist-item {
-	padding-top: $base-text-interval;
+	padding-top: $vertical-rhythm;
 }
 
 .widget_calendar {
@@ -133,7 +132,7 @@ $base-text-interval: 14px !default;
 
 .navigation {
 	overflow: hidden;
-	margin: 0 0 $base-text-interval;
+	margin: 0 0 $vertical-rhythm;
 	.next {
 		float: left;
 		max-width: 50%;
@@ -148,20 +147,20 @@ $base-text-interval: 14px !default;
 .wp-caption {
 	max-width: 100%;
 	clear: both;
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin-bottom: $base-text-interval;
+	border: 1px solid $gray;
+	padding: .4em;
+	margin-bottom: $vertical-rhythm;
 	img {
 		margin: 0;
 		vertical-align: top;
 	}
 	p {
-		margin: 10px 0 0;
+		margin: .4em 0 0;
 	}
 }
 
 div.aligncenter {
-	margin: 0 auto $base-text-interval;
+	margin: 0 auto $vertical-rhythm;
 }
 
 img.aligncenter {
@@ -171,16 +170,16 @@ img.aligncenter {
 
 .alignleft {
 	float: left;
-	margin: 0 $base-text-interval 4px 0; 
+	margin: 0 $vertical-rhythm 4px 0; 
 }
 
 .alignright {
 	float: right;
-	margin: 0 0 4px $base-text-interval; 
+	margin: 0 0 4px $vertical-rhythm; 
 }
 
 .mejs-container {
-	margin-bottom: $base-text-interval;
+	margin-bottom: $vertical-rhythm;
 }
 
 .gallery,
